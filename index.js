@@ -38,11 +38,8 @@ $(document).ready(function () {
                 $("#"+i).click(function(){
                     // console.log(current_category);
                     // alert(current_category);
-                    const request_six = {
-                        "url": "https://gorest.co.in/public-api/products?categories[]=" + response.data[i].id,
-                        "method": "GET"
-                    };
-                    document.write(request_six)
+                    
+                    document.write(categories)
                 }); 
             }
 
@@ -69,10 +66,6 @@ $(document).on('keypress', function(e) {
                 let current_category = response.data[i].name;
 
                 if (input === response.data[i].name || input.toUpperCase() === response.data[i].name.toUpperCase()) {  
-                    /*element.style.display = "";*/
-
-                    //getting product list
-
                     const request_three = {
                         "url": "https://gorest.co.in/public-api/products?categories[]=" + response.data[i].id,
                         "method": "GET"
@@ -88,8 +81,7 @@ $(document).on('keypress', function(e) {
 
                     });
                 } else {
-                    /*element.style.display = "none";*/
-                    /*console.log('mismatch of the category');*/
+        
                 }
             }
 
